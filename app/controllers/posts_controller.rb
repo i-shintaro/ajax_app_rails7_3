@@ -9,7 +9,8 @@ class PostsController < ApplicationController
   def create
     post = Post.create(content: params[:content])
     render json:{ post: post }
-    redirect_to action: :index
+    # (post) をJSON形式でレスポンスとしてクライアントに返す　非同期
+    # redirect_to action: :index　　同期通信
   end
 end
 
